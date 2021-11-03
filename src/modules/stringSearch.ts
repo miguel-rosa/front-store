@@ -1,0 +1,2 @@
+// eslint-disable-next-line import/no-anonymous-default-export
+export default (name:string, search:string, categoryId: string, categorySearch: string) => (categorySearch === "" || categoryId === categorySearch)  &&  name.toUpperCase().includes(search.toUpperCase())

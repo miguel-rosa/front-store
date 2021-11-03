@@ -5,12 +5,9 @@ import Header from './components/Header';
 import Filter from './components/Filter';
 import Products from './components/Products';
 import Navbar from './components/Navbar';
+import { SearchStorage } from './contexts/SearchContext';
 
 const filters = [
-  {
-    name: "All",
-    id: "all"
-  },
   {
     name: "Burguers",
     id: "burguers"
@@ -29,54 +26,55 @@ const filters = [
 const products = [
   {
     id: 1,
-    name: "Burguer",
+    name: "X-Burguer",
     price: 4590,
     imageUrl: "https://images.unsplash.com/photo-1586816001966-79b736744398?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=340&q=60",
-    catalogId: "burguer"
+    categoryId: "burguers"
   },
   {
     id: 2,
-    name: "Burguer",
+    name: "Strawberry Milkshale",
     price: 4590,
-    imageUrl: "https://images.unsplash.com/photo-1586816001966-79b736744398?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=340&q=60",
-    catalogId: "burguer"
+    imageUrl: "https://images.unsplash.com/photo-1589734575451-8ddc34c5752b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=494&q=60",
+    categoryId: "milkshakes"
   },
   {
     id: 3,
-    name: "Burguer",
+    name: "Chocolate Cookie",
     price: 4590,
-    imageUrl: "https://images.unsplash.com/photo-1586816001966-79b736744398?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=340&q=60",
-    catalogId: "burguer"
+    imageUrl: "https://images.unsplash.com/photo-1607114910421-a7c2b982d497?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=370&q=70",
+    categoryId: "cookies"
   },
   {
     id: 4,
-    name: "Burguer",
+    name: "X-Burguer",
     price: 4590,
     imageUrl: "https://images.unsplash.com/photo-1586816001966-79b736744398?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=340&q=60",
-    catalogId: "burguer"
+    categoryId: "burguer"
   },
   {
     id: 5,
-    name: "Burguer",
+    name: "Strawberry Milkshake",
     price: 4590,
-    imageUrl: "https://images.unsplash.com/photo-1586816001966-79b736744398?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=340&q=60",
-    catalogId: "burguer"
+    imageUrl: "https://images.unsplash.com/photo-1589734575451-8ddc34c5752b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=494&q=60",
+    categoryId: "milkshakes"
   },
   {
     id: 6,
-    name: "Burguer",
+    name: "Chocolate Cookie",
     price: 4590,
-    imageUrl: "https://images.unsplash.com/photo-1586816001966-79b736744398?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=340&q=60",
-    catalogId: "burguer"
+    imageUrl: "https://images.unsplash.com/photo-1607114910421-a7c2b982d497?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=370&q=70",
+    categoryId: "cookies"
   }
-
 ]
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header />
-    <Filter filters={filters} />
-    <Products products={products} />
+    <SearchStorage>
+      <Header />
+      <Filter filters={filters} />
+      <Products products={products} />
+    </SearchStorage>
     <Navbar />
   </React.StrictMode>,
   document.getElementById('root')

@@ -16,6 +16,13 @@
   padding: 8px 24px;
   transition: all .3s ease-in-out;
 }
+.filter:not(.filterSelected) {
+  cursor: pointer;
+}
+
+.filterSelected {
+  background: #33363A;
+}
 
 .filters>:first-child{
   margin-left: 20px !important;
