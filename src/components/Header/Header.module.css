@@ -1,0 +1,33 @@
+.header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap:18px;
+}
+
+.search {
+  flex:1;
+  display:flex;
+  align-items:center;
+  padding-left:13px;
+}
+
+.input {
+  background: transparent;
+  font-size: 18px;
+  padding: 13px;
+  width:100%;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.cart {
+  padding: 13px;
+}
+
+.search, .cart {
+  background: #1E2326;
+  border-radius: 12px;
+}
