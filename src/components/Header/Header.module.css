@@ -1,8 +1,16 @@
 .header {
-  padding: 20px;
+  padding: 16px;
   display: flex;
   justify-content: space-between;
-  gap:18px;
+  gap:10px;
+}
+
+.logo {
+  font-size:32px;
+  display:flex;
+  align-items:center;
+  color:white;
+
 }
 
 .search {
@@ -23,11 +31,31 @@
   outline: none;
 }
 
-.cart {
-  padding: 13px;
+.button {
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-.search, .cart {
+.search, .button {
   background: #1E2326;
   border-radius: 12px;
+}
+
+.quantity {
+  width:18px;
+  height:18px;
+  background:#1CEA87;
+  color:#000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  z-index: 5;
+  position: absolute;
+  top:-2px;
+  right:-2px;
 }
