@@ -77,7 +77,7 @@ export default {
       name: "Cookie with chocolate chips",
       price: 590,
       imageUrl: "https://images.unsplash.com/photo-1607114910421-a7c2b982d497?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=370&q=70",
-      categoryId: "cookies"
+      categoryId: "cookie"
     }
   ]
 };

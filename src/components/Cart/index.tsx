@@ -36,7 +36,7 @@ const Cart:FC<CartProps> = ({whatsapp}) => {
         }
       </ul>
       <footer className={styles.footer}>
-        <a className={styles.submitButton} href={`https://wa.me/${whatsapp}?text=Gostaria+de+comprar+os+seguintes+produtos%3A+${cartItems.map( ({ name }) => name).join(", ")}`}><FaWhatsapp/> Finalizar compra</a>
+        <a className={styles.submitButton} href={`https://wa.me/${whatsapp}?text=I+would+like+to+buy+the+following+products%3A+${cartItems.map( ({ name }) => name).join(", ")}`}><FaWhatsapp size="24"/>Finish purchase</a>
       </footer>
     </div>
     </>
