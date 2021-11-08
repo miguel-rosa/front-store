@@ -16,6 +16,7 @@ type FavoritesContextType = {
   addItemToFavorites(previousValue: FavoritesItems): void;
   removeItemFromFavorites(itemId: number): void;
   removeAllItemsFromFavorites(): void;
+  isProductFavorite(productId: number): boolean;
 };
 
 export const FavoritesContext = createContext({} as FavoritesContextType);
@@ -45,8 +46,10 @@ export const FavoritesStorage:FC = ({ children }) => {
     setIsFavoritesVisible(false)
   }
 
+  const isProductFavorite = (productId: number) => favoritesItems.some( ({id}) => id === productId)
+
   return (
-    <FavoritesContext.Provider value={{isFavoritesVisible, showFavorites, hideFavorites, favoritesItems, addItemToFavorites, removeItemFromFavorites, removeAllItemsFromFavorites}}>
+    <FavoritesContext.Provider value={{isFavoritesVisible, showFavorites, hideFavorites, favoritesItems, addItemToFavorites, removeItemFromFavorites, removeAllItemsFromFavorites, isProductFavorite}}>
       {children}
     </FavoritesContext.Provider>
   )

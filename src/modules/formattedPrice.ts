@@ -1,3 +1,3 @@
-const formattedPrice = (price: number) => `R$${price/100}`;
+const formattedPrice = (price: number) => `$${(price/100).toFixed(2)}`;
 
 export default formattedPrice

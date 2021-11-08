@@ -1,5 +1,4 @@
 import { FC, useContext } from "react";
-import { FaWhatsapp } from "react-icons/fa";
 import { FiTrash2 } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
 
@@ -8,8 +7,8 @@ import formattedPrice from "../../modules/formattedPrice";
 import styles from "./Favorites.module.css"
 
 const Favorites:FC = () => {
-  const {isFavoritesVisible, hideFavorites, favoritesItems, removeItemFromFavorites, removeAllItemsFromFavorites} = useContext(FavoritesContext);
-  return isFavoritesVisible ? (
+  const {isFavoritesVisible, hideFavorites, favoritesItems, removeItemFromFavorites} = useContext(FavoritesContext);
+  return isFavoritesVisible && favoritesItems.length > 0 ? (
     <>
     <button className={styles.overlay} onClick={hideFavorites}/>
     <div className={styles.favorites}>
@@ -31,10 +30,6 @@ const Favorites:FC = () => {
           ))
         }
       </ul>
-      <footer className={styles.footer}>
-        <button className={styles.clearFavoritesButton}onClick={removeAllItemsFromFavorites}>Limpar carrinho</button>
-        <button className={styles.submitButton}><FaWhatsapp/> Finalizar compra</button>
-      </footer>
     </div>
     </>
   ) : null

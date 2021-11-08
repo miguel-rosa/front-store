@@ -24,3 +24,8 @@ ul {
 button, input {
   border: unset;
 }
+
+main {
+  max-width: 1240px;
+  margin:0 auto;
+}

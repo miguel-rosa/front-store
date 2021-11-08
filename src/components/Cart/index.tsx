@@ -7,9 +7,13 @@ import { CartContext } from "../../contexts/CartContext";
 import formattedPrice from "../../modules/formattedPrice";
 import styles from "./Cart.module.css"
 
-const Cart:FC = () => {
+type CartProps = {
+  whatsapp: string;
+}
+
+const Cart:FC<CartProps> = ({whatsapp}) => {
   const {isCartVisible, hideCart, cartItems, removeItemFromCart} = useContext(CartContext);
-  return isCartVisible ? (
+  return isCartVisible && cartItems.length > 0 ? (
     <>
     <button className={styles.overlay} onClick={hideCart}/>
     <div className={styles.cart}>
@@ -32,11 +36,7 @@ const Cart:FC = () => {
         }
       </ul>
       <footer className={styles.footer}>
-        {/* <div className={styles.total}>
-          <p>Total</p>
-          <p>{cartItems.reduce((previousValue, cartItem) => previousValue+cartItem.price, 0)}</p>
-        </div> */}
-        <button className={styles.submitButton}><FaWhatsapp/> Finalizar compra</button>
+        <a className={styles.submitButton} href={`https://wa.me/${whatsapp}?text=Gostaria+de+comprar+os+seguintes+produtos%3A+${cartItems.map( ({ name }) => name).join(", ")}`}><FaWhatsapp/> Finalizar compra</a>
       </footer>
     </div>
     </>
