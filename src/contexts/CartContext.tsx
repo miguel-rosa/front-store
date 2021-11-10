@@ -22,6 +22,7 @@ type CartContextType = {
 export const CartContext = createContext({} as CartContextType);
 
 export const CartStorage:FC = ({ children }) => {
+  const CART_LOCAL_STORAGE = "cartItems";
   const {setShowNotification} = useContext(NotificationContext);
   const [isCartVisible, setIsCartVisible] = useState<boolean>(false);
   const [cartItems, setCartItems] = useState<CartItems[]>([]);
@@ -49,8 +50,14 @@ export const CartStorage:FC = ({ children }) => {
   }
 
   useEffect(() => {
-
+    const storagedCart = window.localStorage.getItem(CART_LOCAL_STORAGE);
+    if(!storagedCart) return;
+    setCartItems(JSON.parse(storagedCart))
   }, [])
+
+  useEffect(() => {
+    window.localStorage.setItem(CART_LOCAL_STORAGE, JSON.stringify(cartItems));
+  }, [cartItems])
 
   return (
     <CartContext.Provider value={{isCartVisible, showCart, hideCart, cartItems, addItemToCart, removeItemFromCart, removeAllItemsFromCart}}>

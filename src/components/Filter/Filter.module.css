@@ -10,6 +10,15 @@
   z-index: 10;
 }
 
+.filters::-webkit-scrollbar{
+  width: 6px;
+  height: 6px;
+}
+.filters::-webkit-scrollbar-thumb{
+  background: #171a1e;
+  border-radius: 5px;
+}
+
 .filter {
   background: #171A1E;
   border-radius: 12px;

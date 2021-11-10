@@ -16,6 +16,20 @@
   width:100%;
   background: #191e20;
   border-radius: 12px 12px 0 0;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+@media (min-width:1024px){
+  .cart {
+    border-radius: 12px;
+    position:absolute;
+    bottom:unset;
+    left:unset;
+    max-width: 512px;
+    right:16px;
+    top: 70px;
+  }
 }
 
 .header {
@@ -41,6 +55,16 @@
   max-height: 500px;
   overflow-y: auto;
 }
+
+.products::-webkit-scrollbar{
+  width: 6px;
+  height: 6px;
+}
+.products::-webkit-scrollbar-thumb{
+  background: #1cea87;
+  border-radius: 5px;
+}
+
 
 .product {
   display:flex;
@@ -70,6 +94,7 @@
 .remove {
   position: absolute;
   right: 0;
+  cursor: pointer;
 }
 
 .footer {
@@ -97,4 +122,11 @@
   border-radius: 8px;
   padding: 13px;
   text-decoration: unset;
+}
+
+.emptyCart {
+  display:flex;
+  color:white;
+  padding: 40px 0;
+  justify-content: center;
 }
